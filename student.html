@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Live Classroom Notes</title>
+</head>
+
+<body>
+
+<h2>Live Lecture Notes</h2>
+
+<div id="notes"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+
+const socket = io();
+
+socket.on("liveText",(text)=>{
+
+const div = document.getElementById("notes");
+
+div.innerHTML += "<p>"+text+"</p>";
+
+});
+
+</script>
+
+</body>
+
+</html>
